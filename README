@@ -2,6 +2,19 @@
 =================================================
 http://collectd.org/
 
+Custom Build on Ubuntu 10.04
+apt-get install rpl
+apt-get install pkg-config
+apt-get install libgcrypt11-dev
+apt-get install libvarnish-dev
+apt-get install libpcre3-dev
+apt-get install libbsd-dev
+ln -s /usr/lib/libvarnish.so.1 /usr/lib/libvarnish.so
+ln -s /usr/lib/libvarnishapi.so.1 /usr/lib/libvarnishapi.so
+rpl 'Libs: -L${libdir} -lvarnishapi' 'Libs: -L${libdir} -lvarnishapi -lvarnish -lpcre -lbsd' /usr/lib/pkgconfig/varnishapi.pc
+./build.sh
+./configure --enable-libvarnish
+
 About
 -----
 
