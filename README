@@ -2,7 +2,7 @@
 =================================================
 http://collectd.org/
 
-Custom Build on Ubuntu 10.04
+Custom Build on Ubuntu 12.04
 ----------------------------
 
 apt-get install pkg-config
